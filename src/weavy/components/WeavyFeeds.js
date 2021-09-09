@@ -3,18 +3,18 @@ import getJWT from '../getJWT';
 
 import Weavy from '../Weavy';
 import WeavyApp from '../WeavyApp';
-import { feedsAppKey, feedsAppName, filesAppKey, filesAppName, spaceKey, spaceName } from './constants';
+import { feedsAppKey, feedsAppName, spaceKey, spaceName } from './constants';
 
-export default class Feeds extends Component {
+export default class WeavyFeeds extends Component {
   render() {
     return (
       <Weavy jwt={getJWT}>
         <WeavyApp
           spaceKey={spaceKey}
           spaceName={spaceName}
-          appKey={filesAppKey}
-          appName={filesAppName}
-          appType="files"
+          appKey={feedsAppKey}
+          appName={feedsAppName}
+          appType="posts"
           height={this.props.height}
         />
       </Weavy>

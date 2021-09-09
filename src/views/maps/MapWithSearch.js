@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Map, TileLayer } from 'react-leaflet';
+import { Map, Marker, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
 const defaultCenter = [38.9072, -77.0369];
@@ -38,6 +38,7 @@ function App() {
     <div className="App">
       <Map ref={mapRef} center={defaultCenter} zoom={defaultZoom} style={{width:'1000px', height:'800px'}}>
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" />
+        <Marker position={disneyLandLatLng}></Marker>
       </Map>
       <div className="sidebar">
         <h2>Disney World</h2>

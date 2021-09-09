@@ -5,6 +5,10 @@ import { Route, Switch, useLocation } from 'react-router-dom';
 import MainLayout from './../layout/MainLayout';
 import Loadable from '../ui-component/Loadable';
 
+// homnee routing
+const Home = Loadable(lazy(() => import('../views/home')));
+const Messenger = Loadable(lazy(() => import('../views/messenger')));
+
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('../views/dashboard/Default')));
 
@@ -28,22 +32,19 @@ const MainRoutes = () => {
         <Route
             path={[
                 '/dashboard/default',
-
                 '/utils/util-typography',
                 '/utils/util-color',
                 '/utils/util-shadow',
                 '/icons/tabler-icons',
                 '/icons/material-icons',
-
                 '/sample-page'
             ]}
         >
             <MainLayout>
                 <Switch location={location} key={location.pathname}>
-                    <Route path="/dashboard/default" component={DashboardDefault} />
-
+                    <Route path="/dashboard/default" component={Home} />
                     <Route path="/utils/util-typography" component={UtilsMaps} />
-                    <Route path="/utils/util-color" component={UtilsColor} />
+                    <Route path="/utils/util-color" component={Messenger} />
                     <Route path="/utils/util-shadow" component={UtilsShadow} />
                     <Route path="/icons/tabler-icons" component={UtilsTablerIcons} />
                     <Route path="/icons/material-icons" component={UtilsMaterialIcons} />

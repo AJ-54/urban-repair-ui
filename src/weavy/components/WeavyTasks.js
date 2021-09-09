@@ -3,18 +3,18 @@ import getJWT from '../getJWT';
 
 import Weavy from '../Weavy';
 import WeavyApp from '../WeavyApp';
-import { chatAppKey, chatAppName, spaceKey, spaceName } from './constants';
+import { spaceKey, spaceName, tasksAppKey, tasksAppName } from './constants';
 
-export default class WeavyMessenger extends Component {
+export default class WeavyTasks extends Component {
   render() {
     return (
       <Weavy jwt={getJWT}>
         <WeavyApp
           spaceKey={spaceKey}
           spaceName={spaceName}
-          appKey={chatAppKey}
-          appName={chatAppName}
-          appType="messenger"
+          appKey={tasksAppKey}
+          appName={tasksAppName}
+          appType="tasks"
           height={this.props.height}
         />
       </Weavy>

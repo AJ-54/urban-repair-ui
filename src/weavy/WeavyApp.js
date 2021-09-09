@@ -43,7 +43,8 @@ export default class WeavyApp extends Component {
   render() {
     const style = {
       height: this.props.height? this.props.height:"80vh",
+      width: this.props.width? this.props.width:"100%",
     }
-    return <Card><div className="weavy-container" ref={el => this.el = el} style={style}/></Card>;
+    return <Card><div className="weavy-container" ref={el => this.el = el} {...this.props} style={style}/></Card>;
   };
 }
