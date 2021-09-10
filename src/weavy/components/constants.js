@@ -12,3 +12,6 @@ export const chatAppName="Chat";
 
 export const tasksAppKey="urban-repair-tasks";
 export const tasksAppName="Tasks";
+
+export const searchAppKey="urban-repair-search";
+export const searchAppName="Search";

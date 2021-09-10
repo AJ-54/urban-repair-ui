@@ -32,7 +32,7 @@ import NotificationList from './NotificationList';
 
 // assets
 import { IconBell, IconMessageCircle2 } from '@tabler/icons';
-import Messenger from '../../../../weavy/components/Messenger';
+import WeavyMessenger from '../../../../weavy/components/WeavyMessenger';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
@@ -153,7 +153,7 @@ const NotificationSection = () => {
                                             <Grid item xs={12}></Grid>
                                             <Grid item xs={12} style={{minWidth: '400px'}}>
                                                 <PerfectScrollbar container direction="row" >
-                                                    <Messenger markers={[]} />
+                                                    <WeavyMessenger markers={[]} />
                                                 </PerfectScrollbar>
                                             </Grid>
                                         </Grid>
