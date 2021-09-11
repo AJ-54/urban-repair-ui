@@ -16,6 +16,10 @@ import './assets/scss/style.scss';
 
 //-----------------------|| REACT DOM RENDER  ||-----------------------//
 
+const script = document.createElement("script");
+script.src = "https://localhost:44323/javascript/weavy.js";
+document.head.appendChild(script);
+
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter basename={config.basename}>

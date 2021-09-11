@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 import L from "leaflet";
 import 'leaflet/dist/leaflet.css';
+import { getMarkers } from '../../utils/markers';
 
 const defaultCenter = [38.9072, -77.0369];
 const defaultZoom = 8;
@@ -44,6 +45,7 @@ function MapApp() {
     const { leafletElement: map } = current;
     
     L.marker(coords, {icon}).addTo(map).openPopup();
+    return false;
   }
 
   useEffect(()=>{
@@ -63,7 +65,13 @@ function MapApp() {
           addMarker(window.coords);
       });
   }
-  })
+  },[])
+
+  useEffect(()=>{
+    getMarkers().then((markers)=>{
+      markers.map((marker)=>addMarker(marker));
+    })
+  }, [])
 
   
 
