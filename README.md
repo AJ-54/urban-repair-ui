@@ -23,7 +23,7 @@ Urban Repair is packaged as web app to offer cross-platform (iOS/Android/Desktop
 ## Technology Stack
 - < Weavy />
     - Chat: Direct message and group chat functions add the benefits of contextual in-app chat for users.
-    - File Sharing: Powerful & secure file(pictures) sharing.
+    - File-Sharing: Powerful & secure file(pictures) sharing.
     - Feeds: For communicating and collaborating.
     - Tasks: Managing Action items around issues around the city.
 - React.js (Typescript): Front End of the app.
@@ -54,7 +54,7 @@ perform
 * Create a client in `Manage` section in weavy with `clientId` = `test` and `clientSecret` = `test`.
 
 
-### Setting up the ui
+### Setting up the UI
 
 Clone the repository from [https://github.com/mehulnirala/urban-repair-ui](https://github.com/mehulnirala/urban-repair-ui)
 
@@ -64,4 +64,4 @@ $ cd urban-repair-ui
 $ npm start
 `
 
-Point your favourite browser to [http://localhost:3000/](http://localhost:3000/)
+Point your favorite browser to [http://localhost:3000/](http://localhost:3000/)
