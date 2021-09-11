@@ -4,7 +4,7 @@ import L from "leaflet";
 import 'leaflet/dist/leaflet.css';
 import { getMarkers } from '../../utils/markers';
 
-const defaultCenter = [38.9072, -77.0369];
+const defaultCenter = [51.5, -0.11];
 const defaultZoom = 8;
 const icon = L.icon({
   iconSize: [25, 41],

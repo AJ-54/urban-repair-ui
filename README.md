@@ -10,7 +10,8 @@ Urban repair helps the residents to monitor, upload, and tag issues that the cit
 
 ### Features:
 
-* Latest feed browsing containing all the recent issues along with images uploaded. * Highlighting the incident to bring it to the notice of concerned authorities.
+* Latest feed browsing containing all the recent issues along with images uploaded. 
+* Highlighting the incident to bring it to the notice of concerned authorities.
 * Markers are placed on the map tied to each incident, which can be clicked to reveal an image and information about the incident.
 * Automatic tagging of images based to help segregate and manage metadata for topics on issues around the city.
 * In-app messaging service to discuss pressing topics. It would also support to request/offer help needed to solve the incident.
@@ -65,3 +66,12 @@ $ npm start
 `
 
 Point your favorite browser to [http://localhost:3000/](http://localhost:3000/)
+
+
+## Snapshots
+
+![1](https://user-images.githubusercontent.com/86864820/132958344-685e772d-0e8c-4365-8adc-3d79e4489294.png)
+![2](https://user-images.githubusercontent.com/86864820/132958321-07bedee0-fe8e-4ae4-ab26-f7fac6e0e925.png)
+![3](https://user-images.githubusercontent.com/86864820/132958324-0a59cc7d-1426-4d66-a2bd-6a2e739ad502.png)
+![5](https://user-images.githubusercontent.com/86864820/132958341-bb8bb7f7-d579-4041-b872-03809110c483.png)
+![4](https://user-images.githubusercontent.com/86864820/132958326-3b88754b-c16b-4468-920c-60688cbebd72.png)
