@@ -7,13 +7,15 @@ import Loadable from '../ui-component/Loadable';
 
 // homnee routing
 const Home = Loadable(lazy(() => import('../views/home')));
-const Messenger = Loadable(lazy(() => import('../views/messenger')));
 
 // dashboard routing
 const DashboardDefault = Loadable(lazy(() => import('../views/dashboard/Default')));
 
 // utilities routing
 const UtilsMaps = Loadable(lazy(() => import('../views/maps')));
+const UtilitiesMessenger = Loadable(lazy(() => import('../views/messenger')));
+const UtilitiesSearch = Loadable(lazy(() => import('../views/search')));
+
 const UtilsTypography = Loadable(lazy(() => import('../views/utilities/Typography')));
 const UtilsColor = Loadable(lazy(() => import('../views/utilities/Color')));
 const UtilsShadow = Loadable(lazy(() => import('../views/utilities/Shadow')));
@@ -31,25 +33,22 @@ const MainRoutes = () => {
     return (
         <Route
             path={[
-                '/dashboard/default',
-                '/utils/util-typography',
-                '/utils/util-color',
-                '/utils/util-shadow',
-                '/icons/tabler-icons',
-                '/icons/material-icons',
-                '/sample-page'
+                '/home',
+                '/utils/maps',
+                '/utils/chat',
+                '/utils/search',
+                '/docs',
+                '/'
             ]}
         >
             <MainLayout>
                 <Switch location={location} key={location.pathname}>
-                    <Route path="/dashboard/default" component={Home} />
-                    <Route path="/utils/util-typography" component={UtilsMaps} />
-                    <Route path="/utils/util-color" component={Messenger} />
-                    <Route path="/utils/util-shadow" component={UtilsShadow} />
-                    <Route path="/icons/tabler-icons" component={UtilsTablerIcons} />
-                    <Route path="/icons/material-icons" component={UtilsMaterialIcons} />
-
-                    <Route path="/sample-page" component={SamplePage} />
+                    <Route path="/home" component={Home} />
+                    <Route path="/utils/maps" component={UtilsMaps} />
+                    <Route path="/utils/chat" component={UtilitiesMessenger} />
+                    <Route path="/utils/search" component={UtilitiesSearch} />
+                    <Route path="/docs" component={SamplePage} />
+                    <Route exact path="/" component={Home} />
                 </Switch>
             </MainLayout>
         </Route>

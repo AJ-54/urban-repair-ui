@@ -4,11 +4,10 @@ import React from 'react';
 import SubCard from './../../ui-component/cards/SubCard';
 import MainCard from './../../ui-component/cards/MainCard';
 import WeavyMessenger from '../../weavy/components/WeavyMessenger';
-import WeavySearch from '../../weavy/components/WeavySearch';
 
 //===============================|| UI COLOR ||===============================//
 
-const Messenger = () => {
+const UtilitiesMessenger = () => {
 
     return (
         <MainCard  >
@@ -19,4 +18,4 @@ const Messenger = () => {
     );
 };
 
-export default Messenger;
+export default UtilitiesMessenger;

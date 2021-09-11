@@ -15,7 +15,7 @@ const icons = {
 export const pages = {
     id: 'pages',
     title: 'Pages',
-    caption: 'Pages Caption',
+    caption: '',
     type: 'group',
     children: [
         {

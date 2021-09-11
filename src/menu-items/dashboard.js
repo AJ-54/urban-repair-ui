@@ -1,25 +1,26 @@
 // assets
-import { IconDashboard, IconDeviceAnalytics } from '@tabler/icons';
+import { IconDashboard, IconDeviceAnalytics, IconHome2 } from '@tabler/icons';
 
 // constant
 const icons = {
     IconDashboard: IconDashboard,
-    IconDeviceAnalytics
+    IconDeviceAnalytics,
+    IconHome: IconHome2
 };
 
 //-----------------------|| DASHBOARD MENU ITEMS ||-----------------------//
 
 export const dashboard = {
-    id: 'dashboard',
-    title: 'Dashboard',
+    id: 'home',
+    title: 'Home',
     type: 'group',
     children: [
         {
             id: 'default',
-            title: 'Dashboard',
+            title: 'Home',
             type: 'item',
-            url: '/dashboard/default',
-            icon: icons['IconDashboard'],
+            url: '/',
+            icon: icons['IconHome'],
             breadcrumbs: false
         }
     ]
