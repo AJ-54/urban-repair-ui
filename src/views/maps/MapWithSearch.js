@@ -1,79 +1,80 @@
 import React, { useEffect, useRef } from 'react';
-import { Map, Marker, TileLayer } from 'react-leaflet';
+import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
+import L from "leaflet";
 import 'leaflet/dist/leaflet.css';
 
 const defaultCenter = [38.9072, -77.0369];
 const defaultZoom = 8;
-const disneyWorldLatLng = [28.3852, -81.5639];
-const disneyLandLatLng = [33.8121, -117.9190];
+const icon = L.icon({
+  iconSize: [25, 41],
+  iconAnchor: [10, 41],
+  popupAnchor: [2, -40],
+  iconUrl: "https://unpkg.com/leaflet@1.7/dist/images/marker-icon.png",
+  shadowUrl: "https://unpkg.com/leaflet@1.7/dist/images/marker-shadow.png"
+});
 
-function App() {
+
+function MapApp() {
   const mapRef = useRef();
-
-  useEffect(()=>{
-    if()
-  })
 
   /**
    * handleOnSetView
    */
 
-  function handleOnSetView() {
+   function handleOnSetView(coords) {
     const { current = {} } = mapRef;
     const { leafletElement: map } = current;
 
-    map.setView(disneyWorldLatLng, 14);
+    map.setView(coords, 14);
   }
 
   /**
    * handleOnFlyTo
    */
 
-  function handleOnFlyTo() {
+  function handleOnFlyTo(coords) {
     const { current = {} } = mapRef;
     const { leafletElement: map } = current;
 
-    map.flyTo(disneyLandLatLng, 14, {
-      duration: 2
-    });
+    map.flyTo(coords, 14, { duration: 2 });
   }
 
+  function addMarker(coords) {
+    const { current = {} } = mapRef;
+    const { leafletElement: map } = current;
+    
+    L.marker(coords, {icon}).addTo(map).openPopup();
+  }
+
+  useEffect(()=>{
+    if (window.navigator.geolocation) {
+      // Geolocation available
+
+      const handle = (Math.random()<0.8)?handleOnFlyTo:handleOnSetView;
+
+      window.navigator.geolocation.getCurrentPosition((e) => {
+          var { latitude, longitude } = e.coords;
+          window.coords = [latitude, longitude];
+          handle([latitude, longitude])
+          addMarker(window.coords);
+      }, () => {
+          window.coords = defaultCenter;
+          handle(defaultCenter);
+          addMarker(window.coords);
+      });
+  }
+  })
+
+  
+
   return (
-    <div className="App">
-      <Map ref={mapRef} center={defaultCenter} zoom={defaultZoom} style={{width:'1000px', height:'800px'}}>
+    <div className="MapApp">
+      <Map ref={mapRef} center={defaultCenter} zoom={defaultZoom} style={{width:'100%', height:'800px'}}>
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" />
-        <Marker position={disneyLandLatLng}></Marker>
       </Map>
-      <div className="sidebar">
-        <h2>Disney World</h2>
-        <p>
-          Bay Lake, FL
-        </p>
-        <ul>
-          <li>Lat: 28.3852</li>
-          <li>Long: -81.5639</li>
-        </ul>
-        <p>
-          <button onClick={handleOnSetView}>
-            Set View to Disney World
-          </button>
-        </p>
-        <h2>Disneyland</h2>
-        <p>
-          Anaheim, CA
-        </p>
-        <ul>
-          <li>Lat: 33.8121</li>
-          <li>Long: -117.9190</li>
-        </ul>
-        <p>
-          <button onClick={handleOnFlyTo}>
-            Fly to Disneyland
-          </button>
-        </p>
-      </div>
+
     </div>
   );
 }
 
-export default App;
+export default MapApp;
