@@ -8,19 +8,10 @@ import Loadable from '../ui-component/Loadable';
 // homnee routing
 const Home = Loadable(lazy(() => import('../views/home')));
 
-// dashboard routing
-const DashboardDefault = Loadable(lazy(() => import('../views/dashboard/Default')));
-
 // utilities routing
 const UtilsMaps = Loadable(lazy(() => import('../views/maps')));
 const UtilitiesMessenger = Loadable(lazy(() => import('../views/messenger')));
 const UtilitiesSearch = Loadable(lazy(() => import('../views/search')));
-
-const UtilsTypography = Loadable(lazy(() => import('../views/utilities/Typography')));
-const UtilsColor = Loadable(lazy(() => import('../views/utilities/Color')));
-const UtilsShadow = Loadable(lazy(() => import('../views/utilities/Shadow')));
-const UtilsMaterialIcons = Loadable(lazy(() => import('../views/utilities/MaterialIcons')));
-const UtilsTablerIcons = Loadable(lazy(() => import('../views/utilities/TablerIcons')));
 
 // sample page routing
 const SamplePage = Loadable(lazy(() => import('../views/sample-page')));
