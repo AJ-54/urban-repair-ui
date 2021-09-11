@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Map, Marker, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
@@ -9,6 +9,10 @@ const disneyLandLatLng = [33.8121, -117.9190];
 
 function App() {
   const mapRef = useRef();
+
+  useEffect(()=>{
+    if()
+  })
 
   /**
    * handleOnSetView
